@@ -1,0 +1,160 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    box-sizing: border-box;
+}
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #162052;
+}
+#box
+{
+    position: relative;
+    width: 400px;
+    height: 400px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    overflow: hidden;
+}
+#box::before
+{
+    content: ' ';
+    position: absolute;
+    inset: -10px 140px;
+    background: linear-gradient(320deg,#00ccff,#d400d4);
+    transition: 0.5s;
+    animation: animate 4s linear infinite;
+}
+#box:hover::before
+{
+inset: -20px 0px;
+}
+
+@keyframes animate
+{
+    0%
+    {
+        transform: rotate(0deg);
+    }
+    100%
+    {
+        transform: rotate(360deg);
+    }
+}
+#box::after
+{
+    content: '';
+    position: absolute;
+    inset: 6px;
+    background: #162052;
+    border-radius: 50%;
+    z-index: 1;
+}
+#content
+{
+    position: absolute;
+    inset: 30px;
+    border: 6px solid #070a1c;
+    z-index: 3;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+#content img
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height:140%;
+    object-fit: cover;
+    transition: 0.5s;
+    pointer-events: none;
+    transform: rotate(0deg);
+    z-index: 3;
+}
+#box:hover #content img
+{
+    opacity: 0;
+}
+#content h2
+{
+    position: relative;
+    font-size: 1.5em;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: capitalize;
+}
+#content span
+{
+    position: relative;
+    font-size: 1em;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: #fff;
+}
+#content a
+{
+        font-size: 1em;
+}
+
+a
+{
+    position: relative;
+    border: 2px solid gray;
+    border-radius:5px 10% 5px 10%;
+    width: 100px;
+    height: 30px;
+    display: inline-block;
+    letter-spacing: 0.05em;
+    color: white;
+    background-color:rgba(200,0,0,0.5);
+    text-align: center;   
+    transition: 0.4s;
+    text-decoration: none;
+}
+a:hover
+{
+    background-color: black;
+    color: #00ccff;
+}
+#kiss
+{
+    position: relative;
+    font-size: 65px;
+    Letter-spacing: 2px;
+    color: #0e3742;
+    text-transform: capitalize;
+    width: 50%;
+    text-align: center;
+    -webkit-box-reflect: below 1px linear-gradient(transparent,#0004);
+    line-height: 0.7em;
+    outline: none;
+    animation: zak 3s linear infinite;
+}
+@keyframes zak {
+    0%,18%,20.1%,50%,60.1%,70.1%,75%,83.1%,90.1%,96%
+    {
+        color: #0e3742;
+        box-shadow: none;
+    }
+    18.6%,20.8%,50.6%,60.7%,70.9%,75.6%,83.9%,90.9%,96.6%,100%
+    {
+        color: #fff;
+        text-shadow: 0 0 10px #03bcf4,
+                    0 0 20px #03bcf4,
+                    0 0 40px #03bcf4,
+                    0 0 80px #03bcf4,
+                    0 0 160px #03bcf4;
+    }
+}
